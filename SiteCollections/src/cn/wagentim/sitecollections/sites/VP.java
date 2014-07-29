@@ -1,36 +1,34 @@
 package cn.wagentim.sitecollections.sites;
 
-public class VP implements Site
-{
-	private static final String URL = "https://secure.de.vente-privee.com/vp4/Login/Portal_DE.aspx?CountryCode=DE";
-	private static final String USER_NAME = "wagentim@hotmail.com";
-	private static final String PASSWORD = "huang78";
+import cn.wagentim.connecthelper.core.IConnectConfigure;
 
+public class VP extends AbstractWebSite
+{
 	@Override
-	public String getURL()
+	public int getConnectType()
 	{
-		return URL;
+		return IConnectConfigure.USER_LOGIN;
 	}
 
-	@Override
 	public String getUserName()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return "wagentim@hotmail.com";
 	}
 
-	@Override
 	public String getPassword()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return "huang78";
 	}
 
 	@Override
-	public boolean isAnonymous()
+	public String getName()
 	{
-		// TODO Auto-generated method stub
-		return false;
+		return "VP";
+	}
+
+	public String getURL()
+	{
+		return "https://secure.de.vente-privee.com/vp4/Login/Portal_DE.aspx?CountryCode=DE";
 	}
 
 }
