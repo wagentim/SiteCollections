@@ -2,6 +2,8 @@ package cn.wagentim.sitecollection.handles.kfc;
 
 import cn.wagentim.connecthelper.core.ConnectManager;
 import cn.wagentim.connecthelper.webs.WebSite;
+import cn.wagentim.sitecollection.settings.GlobalSettings;
+import de.wagentim.qlogger.logger.Log;
 
 public class KFCHandler
 {
@@ -14,7 +16,13 @@ public class KFCHandler
 
 	public void fetchCoupons()
 	{
-		String s = ConnectManager.standardGet(kfc.getStartURL());
+		fetchCoupons(GlobalSettings.getDownloadLocation());
+	}
 
+	private void fetchCoupons(final String saveLocation)
+	{
+		KFC.logger.log(Log.LEVEL_INFO, "KFCHandler#fetchCoupons: start...");
+		String s = ConnectManager.standardGet(kfc.getStartURL());
+		KFCParser.parserCouponLink(s);
 	}
 }
