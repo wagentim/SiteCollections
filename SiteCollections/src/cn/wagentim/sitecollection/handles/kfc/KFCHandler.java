@@ -22,7 +22,7 @@ public class KFCHandler
 	private void fetchCoupons(final String saveLocation)
 	{
 		KFC.logger.log(Log.LEVEL_INFO, "KFCHandler#fetchCoupons: start...");
-		String s = ConnectManager.standardGet(kfc.getStartURL());
+		String s = ConnectManager.getWebPage(kfc.getStartURL());
 		KFC.logger.log(Log.LEVEL_INFO, "KFCHandler#fetchCoupons: parser the page %1", kfc.getStartURL());
 		KFCParser.parserCouponLink(s);
 	}
