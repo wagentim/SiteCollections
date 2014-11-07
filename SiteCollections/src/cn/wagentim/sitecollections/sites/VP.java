@@ -19,10 +19,17 @@ public class VP extends AbstractWebSite
 	}
 
 	@Override
-	public String getStartURL()
+	public void processFinished(Object data)
 	{
 		// TODO Auto-generated method stub
-		return null;
+
+	}
+
+	@Override
+	protected void exec()
+	{
+		// TODO Auto-generated method stub
+
 	}
 
 }
