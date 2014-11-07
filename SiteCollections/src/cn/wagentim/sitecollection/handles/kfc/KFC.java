@@ -1,12 +1,11 @@
 package cn.wagentim.sitecollection.handles.kfc;
 
-import cn.wagentim.connecthelper.core.ConnectManager;
-import cn.wagentim.sitecollections.sites.AbstractWebSite;
+import cn.wagentim.connecthelper.threads.ICallback;
 import de.wagentim.qlogger.channel.DefaultChannel;
 import de.wagentim.qlogger.channel.LogChannel;
 import de.wagentim.qlogger.service.QLoggerService;
 
-public class KFC extends AbstractWebSite
+public class KFC implements ICallback
 {
 	private final String START_URL = "http://www.kfc.de/";
 
@@ -14,7 +13,6 @@ public class KFC extends AbstractWebSite
 
 	public void exec()
 	{
-		ConnectManager.applyStandardConnection(START_URL, this);
 	}
 
 	@Override
