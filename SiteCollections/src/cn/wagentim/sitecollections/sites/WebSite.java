@@ -7,4 +7,8 @@ public interface WebSite
 	String getScheme();
 
 	String getPath();
+	
+	String getUserName();
+	
+	String getPassword();
 }
