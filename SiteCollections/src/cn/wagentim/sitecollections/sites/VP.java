@@ -1,7 +1,7 @@
 package cn.wagentim.sitecollections.sites;
 
 
-public class VP extends AbstractWebSite
+public class VP implements WebSite
 {
 	public String getUserName()
 	{
@@ -13,23 +13,21 @@ public class VP extends AbstractWebSite
 		return "huang78";
 	}
 
-	public String getURL()
+	@Override
+	public String getHost()
 	{
-		return "https://secure.de.vente-privee.com/vp4/Login/Portal_DE.aspx?CountryCode=DE";
+		return "secure.de.vente-privee.com/";
+	}
+	
+	@Override
+	public String getScheme()
+	{
+		return "https";
 	}
 
 	@Override
-	public void processFinished(Object data)
+	public String getPath()
 	{
-		// TODO Auto-generated method stub
-
+		return "/authentication/portal/DE";
 	}
-
-	@Override
-	protected void exec()
-	{
-		// TODO Auto-generated method stub
-
-	}
-
 }
